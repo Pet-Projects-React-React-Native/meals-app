@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {
   View,
   FlatList,
@@ -9,14 +9,31 @@ import {
 import {CATEGORIES} from '../data/dummy-data';
 import ICategory from '../models/ICategory';
 import CategoryItem from '../components/CategoryItem';
+import {CategoriesScreenProps} from '../navigation/types/ScreenProps';
+import {Screen} from '../navigation/types/Screens';
 
-const CategoriesScreen = (): JSX.Element => {
+const CategoriesScreen: FC<CategoriesScreenProps> = ({
+  navigation,
+}): JSX.Element => {
   const keyExtractorHandler = (item: ICategory): string => item.id;
   const renderCategoryItem: ListRenderItem<ICategory> = ({
     item: {title, id, color},
-  }): JSX.Element => (
-    <CategoryItem key={id} id={id} title={title} color={color} />
-  );
+  }): JSX.Element => {
+    const pressHandler = () =>
+      navigation.navigate(Screen.MealsOverview, {
+        categoryId: id,
+      });
+
+    return (
+      <CategoryItem
+        key={id}
+        id={id}
+        title={title}
+        color={color}
+        onPress={pressHandler}
+      />
+    );
+  };
 
   return (
     <SafeAreaView style={styles.screen}>

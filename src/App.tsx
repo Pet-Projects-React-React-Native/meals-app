@@ -1,22 +1,20 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
-import CategoriesScreen from './screens/CategoriesScreen';
+import {View, StatusBar, StyleSheet} from 'react-native';
+import RootNavigation from './navigation/RootNavigation';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar />
-      <CategoriesScreen />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <StatusBar barStyle={'light-content'} backgroundColor={'#59361c'} />
+      <RootNavigation />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+    backgroundColor: '#59361c',
   },
 });
 

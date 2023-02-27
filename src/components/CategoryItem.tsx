@@ -10,7 +10,15 @@ import {
 } from 'react-native';
 import ICategory from '../models/ICategory';
 
-const CategoryItem: FC<ICategory> = ({title, color}): JSX.Element => {
+interface CategoryItemProps extends ICategory {
+  readonly onPress: () => void;
+}
+
+const CategoryItem: FC<CategoryItemProps> = ({
+  title,
+  color,
+  onPress,
+}): JSX.Element => {
   const categoryItemBackgroundColor: ViewStyle = {
     backgroundColor: color,
   };
@@ -29,7 +37,10 @@ const CategoryItem: FC<ICategory> = ({title, color}): JSX.Element => {
 
   return (
     <View style={[styles.outerItemContainer, categoryItemBackgroundColor]}>
-      <Pressable style={onPressIosHandler} android_ripple={androidRippleConfig}>
+      <Pressable
+        style={onPressIosHandler}
+        android_ripple={androidRippleConfig}
+        onPress={onPress}>
         <View style={styles.innerItemContainer}>
           <Text style={styles.itemText}>{title}</Text>
         </View>
