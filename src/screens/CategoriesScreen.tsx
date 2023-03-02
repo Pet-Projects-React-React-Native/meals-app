@@ -1,15 +1,9 @@
 import React, {FC} from 'react';
-import {
-  View,
-  FlatList,
-  ListRenderItem,
-  SafeAreaView,
-  StyleSheet,
-} from 'react-native';
+import {FlatList, ListRenderItem, SafeAreaView, StyleSheet} from 'react-native';
 import {CATEGORIES} from '../data/dummy-data';
 import ICategory from '../models/ICategory';
 import CategoryItem from '../components/CategoryItem';
-import {CategoriesScreenProps} from '../navigation/types/ScreenProps';
+import {CategoriesScreenProps} from '../navigation/types/ScreenTypes';
 import {Screen} from '../navigation/types/Screens';
 
 const CategoriesScreen: FC<CategoriesScreenProps> = ({
@@ -19,7 +13,7 @@ const CategoriesScreen: FC<CategoriesScreenProps> = ({
   const renderCategoryItem: ListRenderItem<ICategory> = ({
     item: {title, id, color},
   }): JSX.Element => {
-    const pressHandler = () =>
+    const pressHandler = (): void =>
       navigation.navigate(Screen.MealsOverview, {
         categoryId: id,
       });

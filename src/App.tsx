@@ -5,7 +5,7 @@ import RootNavigation from './navigation/RootNavigation';
 function App(): JSX.Element {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={'light-content'} backgroundColor={'#59361c'} />
+      <StatusBar barStyle={'light-content'} backgroundColor={'#351401'} />
       <RootNavigation />
     </View>
   );
@@ -14,7 +14,6 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#59361c',
   },
 });
 

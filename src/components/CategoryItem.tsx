@@ -79,13 +79,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   itemPressed: {
-    backgroundColor: 'rgba(255,255,255,0.7)',
-    opacity: 0.25,
+    opacity: 0.5,
   },
   itemText: {
     fontSize: 18,
     color: '#363636',
-
     ...Platform.select({
       android: {
         fontFamily: 'Laila-Bold',
