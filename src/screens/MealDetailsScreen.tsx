@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useLayoutEffect} from 'react';
 import {
   Text,
   View,
@@ -12,8 +12,10 @@ import FastImage from 'react-native-fast-image';
 import MealsDetails from '../components/MealDetail/MealsDetails';
 import Subtitle from '../components/MealDetail/Subtitle';
 import List from '../components/MealDetail/List';
+import IconButton from '../components/IconButton';
 
 const MealDetailsScreen: FC<MealDetailsScreenProps> = ({
+  navigation,
   route: {
     params: {
       imageUrl,
@@ -26,6 +28,14 @@ const MealDetailsScreen: FC<MealDetailsScreenProps> = ({
     },
   },
 }): JSX.Element => {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <IconButton name={'star'} size={24} color={'#fff'} onPress={() => {}} />
+      ),
+    });
+  });
+
   return (
     <SafeAreaView style={styles.screenContainer}>
       <ScrollView

@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/Ionicons.ttf",
+      "sha1": "b5281fbfa43129abc3e412dd938cfcf0b77de999"
+    },
+    {
       "path": "src/assets/fonts/Laila-Bold.ttf",
       "sha1": "a7964791f62250f90cff8e805bdccafd9ed325cc"
     },

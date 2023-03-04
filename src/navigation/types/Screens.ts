@@ -1,5 +1,7 @@
 export enum Screen {
-  Categories = 'Categories',
   MealsOverview = 'MealsOverview',
   MealDetails = 'MealDetails',
+  Drawer = 'Drawer',
+  Categories = 'Categories',
+  Favorite = 'Favorite',
 }

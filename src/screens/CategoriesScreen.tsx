@@ -13,10 +13,11 @@ const CategoriesScreen: FC<CategoriesScreenProps> = ({
   const renderCategoryItem: ListRenderItem<ICategory> = ({
     item: {title, id, color},
   }): JSX.Element => {
-    const pressHandler = (): void =>
+    const pressHandler = (): void => {
       navigation.navigate(Screen.MealsOverview, {
         categoryId: id,
       });
+    };
 
     return (
       <CategoryItem

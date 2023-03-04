@@ -1,24 +1,30 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {StackParamList} from './StackParamList';
+import {MainStackParamList} from './MainStackParamList';
 import {Screen} from './Screens';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {DrawerParamList} from './DrawerParamList';
 
 export type CategoriesScreenProps = NativeStackScreenProps<
-  StackParamList,
+  DrawerParamList,
   Screen.Categories
 >;
 
+export type FavoriteScreenProps = NativeStackScreenProps<
+  DrawerParamList,
+  Screen.Favorite
+>;
+
 export type MealsOverviewScreenProps = NativeStackScreenProps<
-  StackParamList,
+  MainStackParamList,
   Screen.MealsOverview
 >;
 
 export type MealDetailsScreenProps = NativeStackScreenProps<
-  StackParamList,
+  MainStackParamList,
   Screen.MealDetails
 >;
 
 export type screenDetailsNavigationType = StackNavigationProp<
-  StackParamList,
+  MainStackParamList,
   Screen.MealDetails
 >;

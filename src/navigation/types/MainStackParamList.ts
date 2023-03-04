@@ -1,8 +1,8 @@
 import {Screen} from './Screens';
 import IMeal from '../../models/IMeal';
 
-export type StackParamList = {
-  [Screen.Categories]: undefined;
+export type MainStackParamList = {
+  [Screen.Drawer]: undefined;
   [Screen.MealsOverview]: {
     readonly categoryId: string;
   };

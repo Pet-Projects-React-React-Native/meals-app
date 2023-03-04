@@ -29,15 +29,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#e2b497',
   },
   itemText: {
+    fontSize: 15,
     alignItems: 'center',
     color: '#351401',
     ...Platform.select({
       android: {
-        fontFamily: 'Laila-Regular',
+        fontFamily: 'Laila-Medium',
       },
       ios: {
-        fontFamily: 'Laila-Regular',
-        fontWeight: '400',
+        fontFamily: 'Laila-Medium',
+        fontWeight: '500',
       },
     }),
   },
