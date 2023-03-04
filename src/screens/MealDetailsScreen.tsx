@@ -12,12 +12,16 @@ import FastImage from 'react-native-fast-image';
 import MealsDetails from '../components/MealDetail/MealsDetails';
 import Subtitle from '../components/MealDetail/Subtitle';
 import List from '../components/MealDetail/List';
-import IconButton from '../components/IconButton';
+import IconButton from '../components/Buttons/IconButton';
+import {useFavoriteMealsSlice} from '../redux/slices/FavoriteMealsSlice';
+import {useAppDispatch} from '../hooks/redux/useAppDispatch';
+import {useAppSelector} from '../hooks/redux/useAppSelector';
 
 const MealDetailsScreen: FC<MealDetailsScreenProps> = ({
   navigation,
   route: {
     params: {
+      id,
       imageUrl,
       ingredients,
       steps,
@@ -28,10 +32,23 @@ const MealDetailsScreen: FC<MealDetailsScreenProps> = ({
     },
   },
 }): JSX.Element => {
+  const {favoriteIds} = useAppSelector(state => state.favoriteMealsSlice);
+  const {addFavorite, removeFavorite} = useFavoriteMealsSlice.actions;
+  const dispatch = useAppDispatch();
+  const isFavorite = favoriteIds.includes(id);
+
+  const addFavoriteHandler = () => dispatch(addFavorite(id));
+  const removeFavoriteHandler = () => dispatch(removeFavorite(id));
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <IconButton name={'star'} size={24} color={'#fff'} onPress={() => {}} />
+        <IconButton
+          name={isFavorite ? 'star' : 'star-outline'}
+          size={24}
+          color={'#fff'}
+          onPress={isFavorite ? removeFavoriteHandler : addFavoriteHandler}
+        />
       ),
     });
   });

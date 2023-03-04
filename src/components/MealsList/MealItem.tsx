@@ -8,14 +8,15 @@ import {
   PressableAndroidRippleConfig,
   ViewStyle,
 } from 'react-native';
-import IMeal from '../models/IMeal';
+import IMeal from '../../models/IMeal';
 import FastImage from 'react-native-fast-image';
 import {useNavigation} from '@react-navigation/native';
-import {Screen} from '../navigation/types/Screens';
-import MealsDetails from './MealDetail/MealsDetails';
-import {screenDetailsNavigationType} from '../navigation/types/ScreenTypes';
+import {Screen} from '../../navigation/types/Screens';
+import MealsDetails from '../MealDetail/MealsDetails';
+import {screenDetailsNavigationType} from '../../navigation/types/ScreenTypes';
 
 const MealItem: FC<IMeal> = ({
+  id,
   title,
   imageUrl,
   complexity,
@@ -39,6 +40,7 @@ const MealItem: FC<IMeal> = ({
 
   const selectMealItemHandler = () =>
     navigation.navigate(Screen.MealDetails, {
+      id: id,
       imageUrl: imageUrl,
       steps: steps,
       title: title,

@@ -8,6 +8,7 @@ export type MainStackParamList = {
   };
   [Screen.MealDetails]: Pick<
     IMeal,
+    | 'id'
     | 'imageUrl'
     | 'steps'
     | 'title'

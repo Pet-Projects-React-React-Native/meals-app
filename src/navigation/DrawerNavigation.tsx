@@ -24,7 +24,9 @@ const DrawerNavigation = (): JSX.Element => {
     drawerInactiveTintColor: '#fff',
     drawerActiveTintColor: '#351401',
     drawerActiveBackgroundColor: '#e4baa1',
+    drawerLabelStyle: navigationStyle.headerDrawerTitleStyle,
   };
+
   return (
     <Drawer.Navigator screenOptions={defaultScreenOptions}>
       <Drawer.Screen

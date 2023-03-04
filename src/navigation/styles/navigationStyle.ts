@@ -24,4 +24,16 @@ export const navigationStyle = StyleSheet.create({
       },
     }),
   },
+  headerDrawerTitleStyle: {
+    fontSize: 16,
+    ...Platform.select({
+      android: {
+        fontFamily: 'Laila-Medium',
+      },
+      ios: {
+        fontFamily: 'Laila-Medium',
+        fontWeight: '600',
+      },
+    }),
+  },
 });

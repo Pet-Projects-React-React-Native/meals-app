@@ -8,7 +8,7 @@ import {
   ViewStyle,
   Platform,
 } from 'react-native';
-import ICategory from '../models/ICategory';
+import ICategory from '../../models/ICategory';
 
 interface CategoryItemProps extends ICategory {
   readonly onPress: () => void;

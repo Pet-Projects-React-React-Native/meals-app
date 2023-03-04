@@ -4,11 +4,6 @@ import {Screen} from './Screens';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {DrawerParamList} from './DrawerParamList';
 
-export type CategoriesScreenProps = NativeStackScreenProps<
-  DrawerParamList,
-  Screen.Categories
->;
-
 export type FavoriteScreenProps = NativeStackScreenProps<
   DrawerParamList,
   Screen.Favorite
@@ -25,6 +20,11 @@ export type MealDetailsScreenProps = NativeStackScreenProps<
 >;
 
 export type screenDetailsNavigationType = StackNavigationProp<
+  MainStackParamList,
+  Screen.MealDetails
+>;
+
+export type screenCategoriesNavigationType = StackNavigationProp<
   MainStackParamList,
   Screen.MealDetails
 >;
